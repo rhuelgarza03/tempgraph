@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <style>
+            table, th, tr {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        {% if logs %}
+        <!-- <p>{{ data }}</p> -->
+        <table>
+            <tr>
+                <th>Temperature (Fahrenheit)</th>
+                <th>Time</th>
+            </tr>
+            {% for log in logs %}
+            <tr>
+                <th>{{ log.temp }}</th>
+                <th>{{ log.time }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>nothing atm</p>
+        {% endif %}
+    </body>
+</html>
